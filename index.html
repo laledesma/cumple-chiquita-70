@@ -11,6 +11,7 @@ html,body{
 }
 
 section{
+    height:100vh;
     min-height:100vh;
     display:flex;
     flex-direction:column;
@@ -19,7 +20,7 @@ section{
     text-align:center;
     padding:40px;
     position:relative;
-    overflow:hidden
+    overflow:hidden;
 }
 
 .g1{
@@ -52,6 +53,10 @@ section{
     position:relative;
     z-index:2;
     max-width:900px
+}
+
+.content{
+    width:100%;
 }
 
 .hidden{
@@ -195,7 +200,10 @@ p{
   color:#cfd7e6;
   font-size:.8rem;
 }
-</style></head><body>
+</style>
+</head>
+
+<body>
 <a id="wa" class="wa" target="_blank" href="https://wa.me/5493512078106?text=Hola! Confirmo mi asistencia al cumpleaños de Chiquita.">💬 Confirmar</a>
 
 <section class="g1">
@@ -209,16 +217,22 @@ p{
 <a class="btn openbtn" href="#historia" onclick="document.getElementById('music').play();document.getElementById('wa').style.display='block';">Abrir invitación</a>
 <audio id="music" src="musica/mas-que-tu-amigo.mp3"></audio>
 </div>
-<!-- <a class="arrow" href="#historia">⌄</a></section> -->
+<!-- <a class="arrow" href="#historia">⌄</a>-->
+</section> 
 
-<section id="historia" class="g2"><h2>Una vida llena de momentos compartidos</h2><p>Experta en reunir personas, hacer reír y preparar algo rico para acompañar la charla.</p><a class="arrow" href="#recuerdos">⌄</a></section>
+<section id="historia" class="g2">
+<h2>Una vida llena de momentos compartidos</h2>
+<p>Experta en reunir personas, hacer reír y preparar algo rico para acompañar la charla.</p>
+<a class="arrow" href="#recuerdos">⌄</a>
+</section>
 
 <section id="recuerdos" class="g1"><h2>Recuerdos</h2><div class="polaroids">
 <div class="pol"><img src="fotos/fideos.jpg"></div><div class="pol"><img src="fotos/torta-colores.jpg"></div>
 <div class="pol"><img src="fotos/helado.jpg"></div><div class="pol"><img src="fotos/lago.jpg"></div>
 <div class="pol"><img src="fotos/restaurante-lentes.jpg"></div><div class="pol"><img src="fotos/tapado-rojo.jpg"></div>
 <div class="pol"><img src="fotos/vestido-negro.jpg"></div><div class="pol"><img src="fotos/cumple-66.jpg"></div>
-</div><a class="btn" target="_blank" href="https://photos.app.goo.gl/pLoWftoeoeKkWTRh6">Ver galería completa</a><a class="arrow" href="#celebracion">⌄</a></section>
+</div><a class="btn" target="_blank" href="https://photos.app.goo.gl/pLoWftoeoeKkWTRh6">Ver galería completa</a><a class="arrow" href="#celebracion">⌄</a>
+</section>
 
 <section id="celebracion" class="g2"><div class="seventy">70</div>
     <!--El titulo viejo-->
