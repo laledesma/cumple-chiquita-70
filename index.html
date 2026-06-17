@@ -17,13 +17,41 @@ section{min-height:100vh;display:flex;flex-direction:column;justify-content:cent
 .name{letter-spacing:10px;font-size:1.4rem;font-weight:600}
 .seventy{font-family:'Agbalumo',cursive;font-size:min(30vw,240px);line-height:1;padding-bottom:.08em;background:linear-gradient(180deg,#fff,#d8dce5,#9da8be);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .btn{padding:14px 28px;border:1px solid rgba(255,255,255,.6);border-radius:40px;color:white;text-decoration:none;display:inline-block;margin-top:20px}
-.arrow{position:absolute;bottom:max(30px, 6vh);left:50%;transform:translateX(-50%);font-size:34px;color:white;text-decoration:none;animation:float 3s infinite ease-in-out}
+.arrow{position:absolute;bottom:max(35px, 10vh);left:50%;transform:translateX(-50%);font-size:34px;color:white;text-decoration:none;animation:float 3s infinite ease-in-out}
 @keyframes float{50%{transform:translateX(-50%) translateY(4px)}}
-.wa{position:fixed;right:20px;bottom:70px;background:#25D366;color:white;padding:9px 14px;border-radius:999px;text-decoration:none;z-index:999;display:none}
+.wa{position:fixed;right:20px;bottom:max(70px, 12vh);background:#25D366;color:white;padding:9px 14px;border-radius:999px;text-decoration:none;z-index:999;display:none}
 .polaroids{display:grid;grid-template-columns:repeat(2,minmax(150px,190px));gap:20px;justify-content:center}
 .pol{width:190px;background:#fff;padding:10px;box-shadow:0 12px 25px rgba(0,0,0,.35)}
 .pol img{width:100%;height:190px;object-fit:cover}
 p{max-width:800px;font-size:1.15rem}
+/*cuenta regresiva*/
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  margin-top:20px;
+}
+
+.countdown div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.countdown span{
+  font-size:2.4rem;
+  font-weight:700;
+  color:#fff;
+  line-height:1;
+}
+
+.countdown small{
+  margin-top:6px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:#cfd7e6;
+  font-size:.8rem;
+}
 </style></head><body>
 <a id="wa" class="wa" target="_blank" href="https://wa.me/5493512078106?text=Hola! Confirmo mi asistencia al cumpleaños de Chiquita.">💬 Confirmar</a>
 
@@ -48,7 +76,11 @@ p{max-width:800px;font-size:1.15rem}
 <div class="pol"><img src="fotos/vestido-negro.jpg"></div><div class="pol"><img src="fotos/cumple-66.jpg"></div>
 </div><a class="btn" target="_blank" href="https://photos.app.goo.gl/pLoWftoeoeKkWTRh6">Ver galería completa</a><a class="arrow" href="#celebracion">⌄</a></section>
 
-<section id="celebracion" class="g2"><div class="seventy">70</div><h2>Te invitamos a celebrar</h2><div id="count"></div><a class="arrow" href="#evento">⌄</a></section>
+<section id="celebracion" class="g2"><div class="seventy">70</div>
+    <!--El titulo viejo-->
+    <!--<h2>Te invitamos a celebrar</h2>-->
+    <h2>Nos vemos en</h2>
+    <div id="count"></div><a class="arrow" href="#evento">⌄</a></section>
 
 <section id="evento" class="g1"><h2>Detalles del evento</h2><p>📅 18 de julio de 2026</p><p>🕗 20:00 hs</p><p>📍 Rancho "El Tata"<br>A. Cura Brochero 2852, San Antonio</p>
 <a class="btn" target="_blank" href="https://maps.app.goo.gl/pU7a4r763Q7mLHxh6">📍 CÓMO LLEGAR</a>
@@ -57,5 +89,35 @@ p{max-width:800px;font-size:1.15rem}
 
 <section id="fin" class="g2"><h2>¿Nos acompañás?</h2><p>Por favor confirmá tu asistencia antes del 10 de julio.</p></section>
 <script>
-function upd(){const t=new Date('2026-07-18T20:00:00')-new Date();const d=Math.max(0,Math.floor(t/86400000));document.getElementById('count').innerHTML='<h3>'+d+' días para celebrar</h3>';} upd();
+function upd(){const t=new Date('2026-07-18T20:00:00')-new Date();const d=Math.max(0,Math.floor(t/86400000));
+/*cuenta regresiva*/
+/*document.getElementById('count').innerHTML='<h3>'+d+' días para celebrar</h3>'*/
+function upd(){
+  const target = new Date('2026-07-18T20:00:00');
+  const now = new Date();
+
+  const diff = target - now;
+
+  if(diff <= 0){
+    document.getElementById('count').innerHTML =
+      '<h3>¡Llegó el gran día!</h3>';
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById('count').innerHTML = `
+    <div class="countdown">
+      <div><span>${days}</span><small>días</small></div>
+      <div><span>${hours}</span><small>hs</small></div>
+      <div><span>${minutes}</span><small>min</small></div>
+    </div>
+  `;
+}
+
+upd();
+setInterval(upd, 60000)
+;} upd();
 </script></body></html>
