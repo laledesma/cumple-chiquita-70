@@ -65,7 +65,8 @@ p{max-width:800px;font-size:1.15rem}
 <p class="sub">70 años de vida, de fe y de infinitos motivos para agradecer.</p>
 <a class="btn openbtn" href="#historia" onclick="document.getElementById('music').play();document.getElementById('wa').style.display='block';">Abrir invitación</a>
 <audio id="music" src="musica/mas-que-tu-amigo.mp3"></audio>
-</div><a class="arrow" href="#historia">⌄</a></section>
+</div>
+<!-- <a class="arrow" href="#historia">⌄</a></section> -->
 
 <section id="historia" class="g2"><h2>Una vida llena de momentos compartidos</h2><p>Experta en reunir personas, hacer reír y preparar algo rico para acompañar la charla.</p><a class="arrow" href="#recuerdos">⌄</a></section>
 
@@ -89,16 +90,13 @@ p{max-width:800px;font-size:1.15rem}
 
 <section id="fin" class="g2"><h2>¿Nos acompañás?</h2><p>Por favor confirmá tu asistencia antes del 10 de julio.</p></section>
 <script>
-function upd(){const t=new Date('2026-07-18T20:00:00')-new Date();const d=Math.max(0,Math.floor(t/86400000));
-/*cuenta regresiva*/
-/*document.getElementById('count').innerHTML='<h3>'+d+' días para celebrar</h3>'*/
-function upd(){
+function upd() {
   const target = new Date('2026-07-18T20:00:00');
   const now = new Date();
 
   const diff = target - now;
 
-  if(diff <= 0){
+  if (diff <= 0) {
     document.getElementById('count').innerHTML =
       '<h3>¡Llegó el gran día!</h3>';
     return;
@@ -118,6 +116,5 @@ function upd(){
 }
 
 upd();
-setInterval(upd, 60000)
-;} upd();
+setInterval(upd, 60000);
 </script></body></html>
