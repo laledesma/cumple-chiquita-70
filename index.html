@@ -1,29 +1,172 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chiquita 70</title>
 <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}html,body{margin:0;background:#071637;color:#fff;font-family:'Josefin Sans',sans-serif;scroll-behavior:smooth}
-section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px;position:relative;overflow:hidden}
-.g1{background:linear-gradient(180deg,#071637,#08295E)} .g2{background:linear-gradient(180deg,#08295E,#071637)}
-.heroimg{position:absolute;inset:0;background:url('fotos/portada.jpg') center/cover no-repeat}
-.overlay{position:absolute;inset:0;background:#000;opacity:0;animation:overlay 2s forwards 2s}
-@keyframes overlay{to{opacity:.5}}
-.content{position:relative;z-index:2;max-width:900px}
-.hidden{opacity:0}
-.l1{animation:fade 1s forwards 3s}.l2{animation:fade 1s forwards 5s}.l3{animation:fade 1s forwards 7s}
-.brand{opacity:0;animation:fade 1s forwards 9s}
-.sub{opacity:0;animation:fade 1s forwards 10s}
-.openbtn{opacity:0;animation:fade 1s forwards 11s}
-@keyframes fade{to{opacity:1}}
-.name{letter-spacing:10px;font-size:1.4rem;font-weight:600}
-.seventy{font-family:'Agbalumo',cursive;font-size:min(30vw,240px);line-height:1;padding-bottom:.08em;background:linear-gradient(180deg,#fff,#d8dce5,#9da8be);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.btn{padding:14px 28px;border:1px solid rgba(255,255,255,.6);border-radius:40px;color:white;text-decoration:none;display:inline-block;margin-top:20px}
-.arrow{position:absolute;bottom:max(35px, 10vh);left:50%;transform:translateX(-50%);font-size:34px;color:white;text-decoration:none;animation:float 3s infinite ease-in-out}
-@keyframes float{50%{transform:translateX(-50%) translateY(4px)}}
-.wa{position:fixed;right:20px;bottom:max(70px, 12vh);background:#25D366;color:white;padding:9px 14px;border-radius:999px;text-decoration:none;z-index:999;display:none}
-.polaroids{display:grid;grid-template-columns:repeat(2,minmax(150px,190px));gap:20px;justify-content:center}
-.pol{width:190px;background:#fff;padding:10px;box-shadow:0 12px 25px rgba(0,0,0,.35)}
-.pol img{width:100%;height:190px;object-fit:cover}
-p{max-width:800px;font-size:1.15rem}
+*{box-sizing:border-box}
+html,body{
+    margin:0;
+    background:#071637;
+    color:#fff;
+    font-family:'Josefin Sans',sans-serif;
+    scroll-behavior:smooth
+}
+
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    position:relative;
+    overflow:hidden
+}
+
+.g1{
+    background:linear-gradient(180deg,#071637,#08295E)
+}
+
+.g2{
+    background:linear-gradient(180deg,#08295E,#071637)
+}
+
+.heroimg{
+    position:absolute;
+    inset:0;
+    background:url('fotos/portada.jpg') center/cover no-repeat
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:#000;
+    opacity:0;
+    animation:overlay 2s forwards 2s
+}
+
+@keyframes overlay{
+    to{opacity:.5}
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    max-width:900px
+}
+
+.hidden{
+    opacity:0
+}
+
+.l1{
+    animation:fade 1s forwards 3s
+}
+
+.l2{
+    animation:fade 1s forwards 5s
+}
+
+.l3{
+    animation:fade 1s forwards 7s
+}
+
+.brand{
+    opacity:0;
+    animation:fade 1s forwards 9s
+}
+
+.sub{
+    opacity:0;
+    animation:fade 1s forwards 10s
+}
+
+.openbtn{
+    opacity:0;
+    animation:fade 1s forwards 11s
+}
+
+@keyframes fade{
+    to{opacity:1}
+}
+
+.name{
+    letter-spacing:10px;
+    font-size:1.4rem;
+    font-weight:600
+}
+
+.seventy{
+    font-family:'Agbalumo',cursive;
+    font-size:min(30vw,240px);
+    line-height:1;
+    padding-bottom:.08em;
+    background:linear-gradient(180deg,#fff,#d8dce5,#9da8be);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent
+}
+
+.btn{
+    padding:14px 28px;
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:40px;
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:20px
+}
+
+.arrow{
+    position:absolute;
+    bottom:max(35px, 10vh);
+    left:50%;
+    transform:translateX(-50%);
+    font-size:34px;color:white;
+    text-decoration:none;
+    animation:float 3s infinite ease-in-out
+}
+
+@keyframes float{
+    50%{transform:translateX(-50%) translateY(4px)}
+}
+
+.wa{
+    position:fixed;
+    right:20px;
+    bottom:max(70px, 12vh);
+    background:#25D366;
+    color:white;
+    padding:9px 14px;
+    border-radius:999px;
+    text-decoration:none;
+    z-index:999;
+    display:none
+}
+
+.polaroids{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(150px,190px));
+    gap:20px;
+    justify-content:center
+}
+
+.pol{
+    width:190px;
+    background:#fff;
+    padding:10px;
+    box-shadow:0 12px 25px rgba(0,0,0,.35)
+}
+
+.pol img{
+    width:100%;
+    height:190px;
+    object-fit:cover
+}
+
+p{
+    max-width:800px;
+    font-size:1.15rem
+}
+
 /*cuenta regresiva*/
 .countdown{
   display:flex;
@@ -117,4 +260,6 @@ function upd() {
 
 upd();
 setInterval(upd, 60000);
-</script></body></html>
+</script>
+</body>
+</html>
