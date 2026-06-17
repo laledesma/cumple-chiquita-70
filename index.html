@@ -316,6 +316,16 @@ musicToggle.addEventListener('click', () => {
     musicToggle.innerHTML = '✕';
   }
 });
+
+document.addEventListener('visibilitychange', () => {
+  const music = document.getElementById('music');
+  const musicToggle = document.getElementById('musicToggle');
+
+  if (document.hidden) {
+    music.pause();
+    musicToggle.innerHTML = '✕';
+  }
+});
 </script>
 </body>
 </html>
